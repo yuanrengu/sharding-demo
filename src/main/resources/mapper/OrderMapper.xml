@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yuanrengu.shardingdemo.mapper.OrderMapper">
+
+	<select id="getOrderByUserId" resultType="com.yuanrengu.shardingdemo.model.Order">
+        select
+            id,
+            user_id as userId,
+            order_id as orderId,
+            remark,
+            create_time as createTime
+        from t_order
+        where user_id=#{userId}
+	</select>
+
+
+    <insert id="addOrder"
+            parameterType="com.yuanrengu.shardingdemo.model.Order">
+	  insert into t_order(
+          user_id,
+          order_id,
+          remark,
+          create_time
+	  )
+	  values
+	  (
+          #{userId},
+          #{orderId},
+          #{remark},
+          now()
+	  )
+	</insert>
+</mapper>

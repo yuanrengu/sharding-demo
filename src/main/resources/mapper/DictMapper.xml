@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yuanrengu.shardingdemo.mapper.SysDictMapper">
+
+	<select id="getDictByCode" resultType="com.yuanrengu.shardingdemo.model.SysDict">
+        select
+            id,data_type as dataType,data_code as dataCode,data_value as dataValue,create_time as createTime
+        from sys_dict
+        where data_code=#{dataCode}
+	</select>
+
+
+    <insert id="addDict"
+            parameterType="com.yuanrengu.shardingdemo.model.SysDict">
+	  insert into sys_dict(
+            data_type,data_code,data_value,create_time
+	  )
+	  values
+	  (
+          #{dataType},
+          #{dataCode},
+          #{dataValue},
+          now()
+	  )
+	</insert>
+</mapper>
