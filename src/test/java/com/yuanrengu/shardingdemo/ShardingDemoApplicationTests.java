@@ -20,7 +20,7 @@ class ShardingDemoApplicationTests {
 
     @Test
     public void testInsert() {
-        for (int i = 1; i < 50; i++) {
+        for (int i = 1; i < 10; i++) {
             long orderId = i;
             long userId = i;
 

@@ -7,8 +7,7 @@
         <!--解决插入的时候有空值的情况-->
         <setting name="jdbcTypeForNull" value="NULL"/>
         <!--mybatis打印sql语句-->
-        <setting name="logImpl" value="SLF4J"/>
-        <setting name="logPrefix" value="dao."/>
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
     </settings>
 
 
