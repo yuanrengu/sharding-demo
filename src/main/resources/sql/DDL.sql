@@ -1,30 +1,3 @@
-ShardingSphere 入门demo
-
-# 环境
-| 依赖 | 版本 |
-|:-----:|:-----:|
-| spring-boot | 2.3.3.RELEASE  |
-| sharding-jdbc-spring-boot-starter | 4.1.1   |
-| mybatis-spring-boot-starter | 2.1.3 |
-| druid | 1.1.23 |
-
-# 数据库
-## 用到4个库，每个库两张表
-- db_00
-  - t_order_0
-  - t_order_1
-- db_01
-  - t_order_0
-  - t_order_1  
-- db_02
-  - t_order_0
-  - t_order_1  
-- db_03
-  - t_order_0
-  - t_order_1  
-  
-## 建表sql：
-```sql
 DROP TABLE IF EXISTS `t_order_0`;
 CREATE TABLE `t_order_0` (
   `id` BIGINT(20) NOT NULL AUTO_INCREMENT,
@@ -45,4 +18,3 @@ CREATE TABLE `t_order_1` (
   `create_time` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=INNODB DEFAULT CHARSET=utf8;
-```
