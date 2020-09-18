@@ -6,6 +6,7 @@ import com.yuanrengu.shardingdemo.service.OrderService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @Service
 public class OrderServiceImpl implements OrderService {
@@ -16,7 +17,7 @@ public class OrderServiceImpl implements OrderService {
 
 
     @Override
-    public Order getOrderByUserId(Long userId) {
+    public List<Order> getOrderByUserId(Long userId) {
         return orderMapper.getOrderByUserId(userId);
     }
 

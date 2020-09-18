@@ -1,5 +1,6 @@
 package com.yuanrengu.shardingdemo;
 
+import com.alibaba.fastjson.JSON;
 import com.yuanrengu.shardingdemo.model.Order;
 import com.yuanrengu.shardingdemo.model.SysDict;
 import com.yuanrengu.shardingdemo.service.OrderService;
@@ -8,6 +9,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.List;
 import java.util.UUID;
 
 @SpringBootTest
@@ -39,9 +41,9 @@ class ShardingDemoApplicationTests {
 
     @Test
     public void testGet() {
-        Order order = orderService.getOrderByUserId(5L);
+        List<Order> orders = orderService.getOrderByUserId(5L);
         System.out.println("==============");
-        System.out.println(order.toString());
+        System.out.println(JSON.toJSONString(orders));
         System.out.println("==============");
 
     }
@@ -53,6 +55,14 @@ class ShardingDemoApplicationTests {
         sysDict.setDataValue("yuanrengu");
 
         sysDictService.addDict(sysDict);
+    }
+
+    @Test
+    public void testGetDict() {
+        SysDict sysDict = sysDictService.getDictByCode("andy");
+        System.out.println("============");
+        System.out.println(JSON.toJSONString(sysDict));
+        System.out.println("============");
     }
 
 
