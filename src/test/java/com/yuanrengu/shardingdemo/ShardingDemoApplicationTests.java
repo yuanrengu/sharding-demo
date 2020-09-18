@@ -1,7 +1,9 @@
 package com.yuanrengu.shardingdemo;
 
 import com.yuanrengu.shardingdemo.model.Order;
+import com.yuanrengu.shardingdemo.model.SysDict;
 import com.yuanrengu.shardingdemo.service.OrderService;
+import com.yuanrengu.shardingdemo.service.SysDictService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -14,7 +16,8 @@ class ShardingDemoApplicationTests {
     @Autowired
     OrderService orderService;
 
-
+    @Autowired
+    SysDictService sysDictService;
 
     @Test
     void contextLoads() {
@@ -41,6 +44,15 @@ class ShardingDemoApplicationTests {
         System.out.println(order.toString());
         System.out.println("==============");
 
+    }
+
+    @Test
+    public void testAddDict() {
+        SysDict sysDict = new SysDict();
+        sysDict.setDataCode("andy");
+        sysDict.setDataValue("yuanrengu");
+
+        sysDictService.addDict(sysDict);
     }
 
 
