@@ -23,7 +23,7 @@ class ShardingDemoApplicationTests {
     @Test
     public void testInsert() {
         for (int i = 1; i < 10; i++) {
-            long orderId = i;
+            long orderId = i + 1;
             long userId = i;
 
             Order order = new Order();
