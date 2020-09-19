@@ -10,18 +10,21 @@ ShardingSphere 入门demo
 
 # 数据库
 ## 用到4个库，每个库两张表
-- db_00
-  - t_order_0
-  - t_order_1
-- db_01
-  - t_order_0
-  - t_order_1  
-- db_02
-  - t_order_0
-  - t_order_1  
-- db_03
-  - t_order_0
-  - t_order_1  
+```
+db_00
+  ├── t_order_0
+  └── t_order_1 
+db_01
+  ├── t_order_0
+  └── t_order_1 
+db_02
+  ├── t_order_0
+  └── t_order_1 
+db_03
+  ├── t_order_0
+  └── t_order_1 
+```
+
   
 ## 建表sql：
 ```sql
