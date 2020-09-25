@@ -26,16 +26,29 @@ class ShardingDemoApplicationTests {
     }
 
     @Test
-    public void testInsert() {
+    public void testAdd() {
         for (int i = 1; i < 10; i++) {
             long orderId = i + 1;
             long userId = i;
 
             Order order = new Order();
             order.setOrderId(orderId);
-            order.setRemark("test");
+//            order.setRemark("test");
             order.setUserId(userId);
             orderService.addOrder(order);
+        }
+    }
+
+    @Test
+    public void testaddEncryptor() {
+        for (int i = 1; i < 10; i++) {
+            long orderId = i + 1;
+            long userId = i;
+
+            Order order = new Order();
+            order.setOrderId(orderId);
+            order.setUserId(userId);
+            orderService.addOrderEncryptor(order);
         }
     }
 

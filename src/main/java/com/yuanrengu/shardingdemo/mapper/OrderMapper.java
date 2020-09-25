@@ -13,4 +13,6 @@ public interface OrderMapper {
 
     int addOrder(Order order);
 
+    int addOrderEncryptor(Order order);
+
 }

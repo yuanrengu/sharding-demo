@@ -32,4 +32,20 @@
           now()
 	  )
 	</insert>
+
+
+    <insert id="addOrderEncryptor"
+            parameterType="com.yuanrengu.shardingdemo.model.Order">
+	  insert into t_order(
+          user_id,
+          order_id,
+          create_time
+	  )
+	  values
+	  (
+          #{userId},
+          #{orderId},
+          now()
+	  )
+	</insert>
 </mapper>
