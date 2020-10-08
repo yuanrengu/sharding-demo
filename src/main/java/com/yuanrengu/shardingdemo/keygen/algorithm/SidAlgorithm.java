@@ -47,11 +47,4 @@ public class SidAlgorithm {
         return System.currentTimeMillis();
     }
 
-    public static void main(String[] args) {
-        System.out.println("=================");
-        System.out.println(nextSid());
-        System.out.println("=================");
-    }
-
-
 }
