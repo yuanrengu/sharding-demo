@@ -1,0 +1,3 @@
+com.yuanrengu.shardingdemo.keygen.SidKeyGenerator
+com.yuanrengu.shardingdemo.keygen.SnowflakeKeyGenerator
+com.yuanrengu.shardingdemo.keygen.UUIDKeyGenerator
