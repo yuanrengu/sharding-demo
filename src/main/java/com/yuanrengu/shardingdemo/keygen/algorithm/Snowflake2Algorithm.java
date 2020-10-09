@@ -74,7 +74,7 @@ public class Snowflake2Algorithm {
         lastStmp = currStmp;
 
         // 就是用相对毫秒数、机器ID和自增序号，3个东西，按顺序拼接成8字节的Long类型数据。
-        // 需要提醒的是这里的毫秒数是相对的，相对epoch的时间点。所以会有currStmp - START_STMP的逻辑。
+        // 需要提醒的是这里的毫秒数是相对的，相对START_STMP的时间点。所以会有currStmp - START_STMP的逻辑。
         return (currStmp - START_STMP) << TIMESTMP_LEFT // 时间戳部分
                 | datacenterId << DATACENTER_LEFT       // 数据中心部分
                 | machineId << MACHINE_LEFT             // 机器标识部分
