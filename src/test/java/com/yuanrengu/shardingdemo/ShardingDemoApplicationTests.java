@@ -53,12 +53,31 @@ class ShardingDemoApplicationTests {
     }
 
     @Test
-    public void testGet() {
+    public void testGetOrderByUserId() {
         List<Order> orders = orderService.getOrderByUserId(5L);
         System.out.println("==============");
         System.out.println(JSON.toJSONString(orders));
         System.out.println("==============");
+    }
 
+
+    @Test
+    public void testGetOrderByOrderId() {
+        // 演示不同查询字段（分表字段、分库字段、非分库分表字段）会请求多少条语句
+//        List<Order> orders1 = orderService.getOrderByOrderId(5L);
+//        System.out.println("==============");
+//        System.out.println(JSON.toJSONString(orders1));
+//        System.out.println("==============");
+//
+//        List<Order> orders2 = orderService.getOrderByUserId(5L);
+//        System.out.println("==============");
+//        System.out.println(JSON.toJSONString(orders2));
+//        System.out.println("==============");
+
+        List<Order> orders3 = orderService.getOrderByRemark("555");
+        System.out.println("==============");
+        System.out.println(JSON.toJSONString(orders3));
+        System.out.println("==============");
     }
 
     @Test

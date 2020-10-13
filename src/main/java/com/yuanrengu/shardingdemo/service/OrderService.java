@@ -15,6 +15,20 @@ public interface OrderService {
     List<Order> getOrderByUserId(Long userId);
 
     /**
+     * 获取订单
+     * @param orderId 订单id
+     * @return
+     */
+    List<Order> getOrderByOrderId(Long orderId);
+
+    /**
+     * 获取订单
+     * @param remark 备注
+     * @return
+     */
+    List<Order> getOrderByRemark(String remark);
+
+    /**
      * 新增
      * @param order
      * @return

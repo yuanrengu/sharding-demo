@@ -11,6 +11,10 @@ public interface OrderMapper {
 
     List<Order> getOrderByUserId(Long userId);
 
+    List<Order> getOrderByOrderId(Long orderId);
+
+    List<Order> getOrderByRemark(String remark);
+
     int addOrder(Order order);
 
     int addOrderEncryptor(Order order);
