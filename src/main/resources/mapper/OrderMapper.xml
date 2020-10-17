@@ -26,6 +26,17 @@
         where order_id=#{orderId}
 	</select>
 
+    <select id="getOrderByUserIdAndOrderId" resultType="com.yuanrengu.shardingdemo.model.Order">
+        select
+            id,
+            user_id as userId,
+            order_id as orderId,
+            remark,
+            create_time as createTime
+        from t_order
+        where user_id=#{userId} and order_id=#{orderId}
+	</select>
+
     <select id="getOrderByRemark" resultType="com.yuanrengu.shardingdemo.model.Order">
         select
             id,

@@ -28,7 +28,7 @@ class ShardingDemoApplicationTests {
     @Test
     public void testAdd() {
         for (int i = 1; i < 10; i++) {
-            long orderId = i + 1;
+            long orderId = i;
             long userId = i;
 
             Order order = new Order();
@@ -62,7 +62,7 @@ class ShardingDemoApplicationTests {
 
 
     @Test
-    public void testGetOrderByOrderId() {
+    public void testGetOrder() {
         // 演示不同查询字段（分表字段、分库字段、非分库分表字段）会请求多少条语句
 //        List<Order> orders1 = orderService.getOrderByOrderId(5L);
 //        System.out.println("==============");
@@ -74,17 +74,23 @@ class ShardingDemoApplicationTests {
 //        System.out.println(JSON.toJSONString(orders2));
 //        System.out.println("==============");
 
-        List<Order> orders3 = orderService.getOrderByRemark("555");
+//        List<Order> orders3 = orderService.getOrderByRemark("555");
+//        System.out.println("==============");
+//        System.out.println(JSON.toJSONString(orders3));
+//        System.out.println("==============");
+
+        List<Order> orders4 = orderService.getOrderByUserIdAndOrderId(5L, 5L);
         System.out.println("==============");
-        System.out.println(JSON.toJSONString(orders3));
+        System.out.println(JSON.toJSONString(orders4));
         System.out.println("==============");
+
     }
 
     @Test
     public void testAddDict() {
         SysDict sysDict = new SysDict();
-        sysDict.setDataCode("andy");
-        sysDict.setDataValue("yuanrengu");
+        sysDict.setDataCode("anna");
+        sysDict.setDataValue("beautiful");
 
         sysDictService.addDict(sysDict);
     }
