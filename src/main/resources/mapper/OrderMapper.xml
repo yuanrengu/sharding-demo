@@ -81,4 +81,26 @@
           now()
 	  )
 	</insert>
+
+
+    <insert id="batchInsertOrder" parameterType="list">
+        insert into t_order(
+        user_id,
+        order_id,
+        remark,
+        create_time
+        )
+        values
+        <foreach collection="params" item="item" index="index" separator=",">
+            (
+            #{item.userId,jdbcType=BIGINT},
+            #{item.orderId,jdbcType=BIGINT},
+            #{item.remark,jdbcType=VARCHAR},
+            now()
+            )
+        </foreach>
+
+    </insert>
+
+
 </mapper>

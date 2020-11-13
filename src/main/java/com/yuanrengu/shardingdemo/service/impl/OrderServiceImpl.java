@@ -45,4 +45,9 @@ public class OrderServiceImpl implements OrderService {
     public int addOrderEncryptor(Order order) {
         return orderMapper.addOrderEncryptor(order);
     }
+
+    @Override
+    public void batchInsertOrder(List<Order> orders) {
+        orderMapper.batchInsertOrder(orders);
+    }
 }

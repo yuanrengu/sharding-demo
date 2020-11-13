@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -39,9 +40,28 @@ class ShardingDemoApplicationTests {
         }
     }
 
+
+
+    @Test
+    public void testBatchAdd() {
+        // 批量插入测试
+        List<Order> orderList = new ArrayList<>();
+        for (int i = 1; i < 10; i++) {
+            long orderId = i;
+            long userId = i;
+
+            Order order = new Order();
+            order.setOrderId(orderId);
+            order.setUserId(userId);
+            orderList.add(order);
+        }
+
+        orderService.batchInsertOrder(orderList);
+    }
+
     @Test
     public void testaddEncryptor() {
-        for (int i = 1; i < 10; i++) {
+        for (int i = 20; i < 30; i++) {
             long orderId = i + 1;
             long userId = i;
 
@@ -89,8 +109,8 @@ class ShardingDemoApplicationTests {
     @Test
     public void testAddDict() {
         SysDict sysDict = new SysDict();
-        sysDict.setDataCode("anna");
-        sysDict.setDataValue("beautiful");
+        sysDict.setDataCode("QDAMA");
+        sysDict.setDataValue("全球卖菜");
 
         sysDictService.addDict(sysDict);
     }

@@ -22,4 +22,6 @@ public interface OrderMapper {
 
     int addOrderEncryptor(Order order);
 
+    void batchInsertOrder(List<Order> params);
+
 }

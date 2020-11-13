@@ -49,4 +49,10 @@ public interface OrderService {
      * @return
      */
     int addOrderEncryptor(Order order);
+
+    /**
+     * 批量插入
+     * @param orders
+     */
+    void batchInsertOrder(List<Order> orders);
 }
